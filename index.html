@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GramSathi AI | Smart Support for Every Village</title>
+<meta name="description" content="GramSathi AI by SouEra helps rural and tribal communities in India find information on schemes, farming, learning, health and local help.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="#home"><span class="logo" aria-hidden="true">🌾</span><b>GramSathi AI</b><small>by SouEra</small></a>
+    <button id="menuBtn" class="menu" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <label class="lang"><span class="sr">Language</span>
+      <select id="lang"><option value="en">English</option><option value="hi">हिन्दी</option><option value="or">ଓଡ଼ିଆ</option></select>
+    </label>
+    <nav id="nav" aria-label="Main navigation">
+      <a href="#assistant" data-i18n="n_ask">Assistant</a>
+      <a href="#schemes" data-i18n="n_sch">Schemes</a>
+      <a href="#farming" data-i18n="n_farm">Farming</a>
+      <a href="#learn" data-i18n="n_learn">Learn</a>
+      <a href="#health" data-i18n="n_health">Health</a>
+      <a href="#help" data-i18n="n_help">Help</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section id="home" class="hero">
+    <div class="wrap">
+      <h1 data-i18n="tag">Smart Support for Every Village</h1>
+      <p class="lead">GramSathi AI by SouEra gathers official information on schemes, farming, learning, health and local help in one simple place.</p>
+      <div class="cta">
+        <a class="btn" href="#assistant" data-i18n="cta">Ask a question</a>
+        <a class="btn ghost" href="#schemes">Browse resources</a>
+      </div>
+      <p id="langnote" class="note" hidden>Menu and chat labels are translated. Resource descriptions are in English for now.</p>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="fh">
+    <h2 id="fh">What you can do here</h2>
+    <div class="cards">
+      <a class="card" href="#assistant"><span class="ic">🤖</span><h3>AI assistant</h3><p>Type or speak a question and get pointed to the right place.</p></a>
+      <a class="card" href="#schemes"><span class="ic">📜</span><h3>Government schemes</h3><p>Official portals to discover and check schemes.</p></a>
+      <a class="card" href="#farming"><span class="ic">🌱</span><h3>Farming guidance</h3><p>Soil, weather, markets and crop insurance links.</p></a>
+      <a class="card" href="#learn"><span class="ic">📚</span><h3>Learn and digital skills</h3><p>Free courses, digital literacy and scholarships.</p></a>
+      <a class="card" href="#health"><span class="ic">🩺</span><h3>Health awareness</h3><p>Public health services and teleconsultation.</p></a>
+      <a class="card" href="#help"><span class="ic">📞</span><h3>Help and contacts</h3><p>Emergency numbers and your own local contacts.</p></a>
+    </div>
+  </section>
+
+  <section id="assistant" class="wrap" aria-labelledby="ah">
+    <h2 id="ah">AI assistant</h2>
+    <div class="chat">
+      <div id="demo" class="demo" role="note"><b>DEMO MODE.</b> No AI backend is connected. Replies are simple keyword matches that point to official resources. They are not AI-generated answers.</div>
+      <div id="log" class="log" role="log" aria-live="polite" tabindex="0">
+        <p id="empty" class="empty">No messages yet. Pick a suggestion or type your own question.</p>
+      </div>
+      <div id="chips" class="chips"></div>
+      <p id="status" class="status" role="status"></p>
+      <form id="form" class="row" novalidate>
+        <label class="sr" for="msg">Your question</label>
+        <input id="msg" maxlength="500" autocomplete="off" placeholder="Type your question" data-i18n-ph="ph">
+        <button id="mic" class="btn ghost" type="button" aria-label="Voice input">🎤</button>
+        <button id="send" class="btn" type="submit" data-i18n="send">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="schemes" class="wrap" aria-labelledby="sh">
+    <div class="head"><h2 id="sh">Government schemes</h2><button class="link" type="button" data-ask="Which government schemes should I know about?">Ask the assistant</button></div>
+    <p class="note">Eligibility and benefits change. Always confirm details on the official portal.</p>
+    <div class="cards" data-list="schemes"></div>
+  </section>
+
+  <section id="farming" class="wrap" aria-labelledby="fmh">
+    <div class="head"><h2 id="fmh">Agriculture and farming</h2><button class="link" type="button" data-ask="Where can I find farming information?">Ask the assistant</button></div>
+    <p class="note">Links go to government sites. Check local advice from your agriculture office too.</p>
+    <div class="cards" data-list="farming"></div>
+  </section>
+
+  <section id="learn" class="wrap" aria-labelledby="lh">
+    <div class="head"><h2 id="lh">Education and digital literacy</h2><button class="link" type="button" data-ask="How can I learn digital skills?">Ask the assistant</button></div>
+    <div class="cards" data-list="learn"></div>
+  </section>
+
+  <section id="health" class="wrap" aria-labelledby="hh">
+    <div class="head"><h2 id="hh">Healthcare awareness</h2><button class="link" type="button" data-ask="Where can I find health services?">Ask the assistant</button></div>
+    <p class="note">General information only. It is not medical advice. Visit a doctor or health centre for care.</p>
+    <div class="cards" data-list="health"></div>
+  </section>
+
+  <section id="help" class="wrap" aria-labelledby="hlh">
+    <h2 id="hlh">Local resources and emergency contacts</h2>
+    <div class="two">
+      <div class="box">
+        <h3>National emergency numbers</h3>
+        <p class="note">Widely published national numbers. Services can differ by state, so confirm with your local authority. Not verified in real time.</p>
+        <ul class="nums">
+          <li><a href="tel:112">112</a> National emergency number</li>
+          <li><a href="tel:100">100</a> Police</li>
+          <li><a href="tel:101">101</a> Fire</li>
+          <li><a href="tel:108">108</a> Ambulance (state-run in many states)</li>
+        </ul>
+        <a href="https://www.india.gov.in" target="_blank" rel="noopener noreferrer">India.gov.in official portal ↗</a>
+      </div>
+      <div class="box">
+        <h3>Your local contacts</h3>
+        <p class="note">Saved only on this device. Add your Panchayat office, health centre or ASHA worker.</p>
+        <form id="cform" novalidate>
+          <label for="cn">Name</label><input id="cn" maxlength="40">
+          <label for="cp">Phone number</label><input id="cp" type="tel" maxlength="15">
+          <button class="btn" type="submit">Add contact</button>
+          <p id="cs" class="status" role="status"></p>
+        </form>
+        <ul id="clist" class="clist"></ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p><b>GramSathi AI</b> by SouEra. Smart Support for Every Village.</p>
+    <p>This is not an official government website. It shares general information and links, and does not give medical, legal or financial advice.</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
